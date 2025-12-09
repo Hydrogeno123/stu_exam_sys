@@ -17,6 +17,7 @@ front_back_list/
 ├── database/
 │   ├── database0.sql          # ✨ 已更新：添加管理员初始账户
 │   └── test1.sql
+│   └── stu_exam1.sql          # 数据库结构及测试数据，用于phpmyadmin导入
 ├── tlias-backend/             # 后端Java项目
 │   └── src/main/java/com/itheima/
 │       └── pojo/User.java     # ✨ 已更新：添加管理员角色
