@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.QuestionMapper">
+
+    <!--分页查询题目列表-->
+    <select id="list" resultType="com.itheima.pojo.Question">
+        select q.*, qb.bank_name as bank_name
+        from question q left join question_bank qb on q.bank_id = qb.id
+        <where>
+            <if test="bankId != null">
+                and q.bank_id = #{bankId}
+            </if>
+            <if test="type != null">
+                and q.type = #{type}
+            </if>
+            <if test="content != null and content != ''">
+                and q.content like concat('%', #{content}, '%')
+            </if>
+        </where>
+        order by q.create_time desc
+    </select>
+
+    <!--查询所有题目-->
+    <select id="findAll" resultType="com.itheima.pojo.Question">
+        select q.*, qb.bank_name as bank_name
+        from question q left join question_bank qb on q.bank_id = qb.id
+        order by q.create_time desc
+    </select>
+
+    <!--批量删除题目-->
+    <delete id="deleteByIds">
+        delete from question where id in
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+
+    <!--根据题库ID和类型查询题目列表-->
+    <select id="findByBankIdAndType" resultType="com.itheima.pojo.Question">
+        select * from question where bank_id = #{bankId} and type = #{type}
+    </select>
+
+</mapper>

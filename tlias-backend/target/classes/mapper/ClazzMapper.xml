@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.ClazzMapper">
+
+    <select id="list" resultType="com.itheima.pojo.Clazz">
+        SELECT c.*, u.name as teacher_name, 
+               (SELECT COUNT(*) FROM user WHERE clazz_id = c.id AND role = 2) as student_count 
+        FROM clazz c 
+        LEFT JOIN user u ON c.teacher_id = u.id 
+        <where>
+            <if test="clazzCode != null and clazzCode != ''">
+                AND c.clazz_code LIKE CONCAT('%', #{clazzCode}, '%')
+            </if>
+            <if test="clazzName != null and clazzName != ''">
+                AND c.clazz_name LIKE CONCAT('%', #{clazzName}, '%')
+            </if>
+            <if test="teacherId != null">
+                AND c.teacher_id = #{teacherId}
+            </if>
+            <if test="status != null">
+                AND c.status = #{status}
+            </if>
+        </where>
+        ORDER BY c.create_time DESC
+    </select>
+
+    <delete id="deleteByIds">
+        DELETE FROM clazz WHERE id IN
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
