@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.UserMapper">
+
+    <select id="list" resultType="com.itheima.pojo.User">
+        SELECT u.*, c.clazz_name 
+        FROM user u 
+        LEFT JOIN clazz c ON u.clazz_id = c.id 
+        <where>
+            <if test="name != null and name != ''">
+                AND u.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="username != null and username != ''">
+                AND u.username LIKE CONCAT('%', #{username}, '%')
+            </if>
+            <if test="role != null">
+                AND u.role = #{role}
+            </if>
+            <if test="clazzId != null">
+                AND u.clazz_id = #{clazzId}
+            </if>
+        </where>
+        ORDER BY u.create_time DESC
+    </select>
+
+    <delete id="deleteByIds">
+        DELETE FROM user WHERE id IN
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

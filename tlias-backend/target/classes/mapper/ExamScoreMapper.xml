@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.ExamScoreMapper">
+
+    <select id="list" resultType="com.itheima.pojo.ExamScore">
+        SELECT es.*, u.name as student_name, e.exam_name, 
+               (e.choice_count + e.fill_count) as total_questions,
+               c.clazz_name
+        FROM exam_score es 
+        LEFT JOIN user u ON es.student_id = u.id 
+        LEFT JOIN exam e ON es.exam_id = e.id
+        LEFT JOIN clazz c ON u.clazz_id = c.id
+        <where>
+            <if test="examId != null">
+                AND es.exam_id = #{examId}
+            </if>
+            <if test="studentId != null">
+                AND es.student_id = #{studentId}
+            </if>
+            <if test="clazzId != null">
+                AND u.clazz_id = #{clazzId}
+            </if>
+            <if test="studentName != null and studentName != ''">
+                AND u.name like concat('%', #{studentName}, '%')
+            </if>
+            <if test="examName != null and examName != ''">
+                AND e.exam_name like concat('%', #{examName}, '%')
+            </if>
+            <if test="isPass != null">
+                <choose>
+                    <when test="isPass == true">AND es.total_score >= FLOOR(e.total_score * 0.6)</when>
+                    <when test="isPass == false">AND es.total_score &lt; FLOOR(e.total_score * 0.6)</when>
+                </choose>
+            </if>
+        </where>
+        ORDER BY es.submit_time DESC
+    </select>
+
+    <select id="getStatisticsByTeacher" resultType="java.util.HashMap">
+        SELECT 
+            c.id as clazzId,
+            c.clazz_code as clazzCode,
+            c.clazz_name as clazzName,
+            COUNT(DISTINCT u.id) as studentCount,
+            COUNT(DISTINCT es.exam_id) as examCount,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            MAX(es.total_score) as maxScore,
+            MIN(es.total_score) as minScore
+        FROM clazz c
+        LEFT JOIN user u ON c.id = u.clazz_id AND u.role = 2
+        LEFT JOIN exam_score es ON u.id = es.student_id
+        WHERE c.teacher_id = #{teacherId} AND c.status = 1
+        GROUP BY c.id, c.clazz_code, c.clazz_name
+        ORDER BY c.clazz_code
+    </select>
+
+    <select id="getStatisticsByClazz" resultType="java.util.HashMap">
+        SELECT 
+            COUNT(DISTINCT es.exam_id) as examCount,
+            COUNT(DISTINCT u.id) as studentCount,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            MAX(es.total_score) as maxScore,
+            MIN(es.total_score) as minScore,
+            COUNT(es.id) as totalRecords
+        FROM clazz c
+        LEFT JOIN user u ON c.id = u.clazz_id AND u.role = 2
+        LEFT JOIN exam_score es ON u.id = es.student_id
+        WHERE c.id = #{clazzId}
+    </select>
+
+    <select id="getStatisticsByExam" resultType="java.util.HashMap">
+        SELECT 
+            COUNT(es.id) as totalStudents,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            MAX(es.total_score) as maxScore,
+            MIN(es.total_score) as minScore,
+            CAST(FLOOR(MAX(e.total_score) * 0.6) AS UNSIGNED) as passScore,
+            COUNT(CASE WHEN es.total_score >= FLOOR(MAX(e.total_score) * 0.6) THEN 1 END) as passCount,
+            ROUND(COUNT(CASE WHEN es.total_score >= FLOOR(MAX(e.total_score) * 0.6) THEN 1 END) * 100.0 / COUNT(es.id), 2) as passRate
+        FROM exam_score es
+        LEFT JOIN exam e ON es.exam_id = e.id
+        WHERE es.exam_id = #{examId}
+    </select>
+
+    <select id="getClazzRanking" resultType="java.util.HashMap">
+        SELECT 
+            u.id as studentId,
+            u.name as studentName,
+            es.total_score as totalScore,
+            es.correct_count as correctCount,
+            e.exam_name as examName,
+            es.submit_time as submitTime,
+            RANK() OVER (ORDER BY es.total_score DESC, es.submit_time ASC) as ranking
+        FROM exam_score es
+        LEFT JOIN user u ON es.student_id = u.id
+        LEFT JOIN exam e ON es.exam_id = e.id
+        WHERE u.clazz_id = #{clazzId}
+        ORDER BY es.total_score DESC, es.submit_time ASC
+    </select>
+
+    <select id="getTeacherClazzComparison" resultType="java.util.HashMap">
+        SELECT 
+            c.id as clazzId,
+            c.clazz_code as clazzCode,
+            c.clazz_name as clazzName,
+            COUNT(DISTINCT u.id) as studentCount,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            MAX(es.total_score) as maxScore,
+            MIN(es.total_score) as minScore
+        FROM clazz c
+        LEFT JOIN user u ON c.id = u.clazz_id AND u.role = 2
+        LEFT JOIN exam_score es ON u.id = es.student_id
+        WHERE c.teacher_id = #{teacherId} AND c.status = 1
+        GROUP BY c.id, c.clazz_code, c.clazz_name
+        ORDER BY avgScore DESC
+    </select>
+
+    <select id="getClazzInfo" resultType="java.util.HashMap">
+        SELECT 
+            c.id as clazzId,
+            c.clazz_code as clazzCode,
+            c.clazz_name as clazzName,
+            u.name as teacherName,
+            c.description as description
+        FROM clazz c
+        LEFT JOIN user u ON c.teacher_id = u.id
+        WHERE c.id = #{clazzId}
+    </select>
+
+    <select id="getRecentExamsByClazz" resultType="java.util.HashMap">
+        SELECT 
+            e.id as examId,
+            e.exam_name as examName,
+            e.exam_time as examTime,
+            COUNT(es.id) as studentCount,
+            ROUND(AVG(es.total_score), 2) as avgScore
+        FROM exam e
+        LEFT JOIN exam_score es ON e.id = es.exam_id
+        LEFT JOIN user u ON es.student_id = u.id
+        WHERE u.clazz_id = #{clazzId}
+        GROUP BY e.id, e.exam_name, e.exam_time
+        ORDER BY e.exam_time DESC
+        LIMIT 5
+    </select>
+
+    <!-- 获取考试统计报告数据 -->
+    <select id="getExamReportData" resultType="java.util.HashMap">
+        SELECT 
+            e.id as examId,
+            e.exam_name as examName,
+            qb.bank_name as subject,
+            COUNT(DISTINCT es.student_id) as participants,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            MAX(es.total_score) as highestScore,
+            MIN(es.total_score) as lowestScore,
+            CAST(FLOOR(e.total_score * 0.6) AS UNSIGNED) as passScore,
+            ROUND(COUNT(CASE WHEN es.total_score >= FLOOR(e.total_score * 0.6) THEN 1 END) * 100.0 / COUNT(es.id), 2) as passRate,
+            e.start_time as examDate
+        FROM exam e
+        LEFT JOIN exam_score es ON e.id = es.exam_id
+        LEFT JOIN question_bank qb ON e.bank_id = qb.id
+        <where>
+            <if test="startDate != null and endDate != null">
+                AND DATE(e.start_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="examName != null and examName != ''">
+                AND e.exam_name LIKE CONCAT('%', #{examName}, '%')
+            </if>
+            <if test="bankId != null">
+                AND e.bank_id = #{bankId}
+            </if>
+        </where>
+        GROUP BY e.id, e.exam_name, qb.bank_name, e.start_time
+        ORDER BY e.start_time DESC
+    </select>
+
+    <!-- 获取考试趋势统计数据 -->
+    <select id="getExamTrendData" resultType="java.util.HashMap">
+        SELECT 
+            DATE(e.start_time) as examDate,
+            COUNT(DISTINCT e.id) as examCount,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            ROUND(COUNT(CASE WHEN es.total_score >= FLOOR(e.total_score * 0.6) THEN 1 END) * 100.0 / COUNT(es.id), 2) as passRate
+        FROM exam e
+        LEFT JOIN exam_score es ON e.id = es.exam_id
+        <where>
+            <if test="startDate != null and endDate != null">
+                AND DATE(e.start_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="bankId != null">
+                AND e.bank_id = #{bankId}
+            </if>
+        </where>
+        GROUP BY DATE(e.start_time)
+        ORDER BY examDate ASC
+    </select>
+
+    <!-- 获取总体统计数据 -->
+    <select id="getOverallStatistics" resultType="java.util.HashMap">
+        SELECT 
+            COUNT(DISTINCT e.id) as totalExams,
+            COUNT(DISTINCT es.student_id) as totalParticipants,
+            ROUND(AVG(es.total_score), 2) as avgScore,
+            ROUND(COUNT(CASE WHEN es.total_score >= FLOOR(e.total_score * 0.6) THEN 1 END) * 100.0 / COUNT(es.id), 2) as passRate
+        FROM exam e
+        LEFT JOIN exam_score es ON e.id = es.exam_id
+        <where>
+            <if test="startDate != null and endDate != null">
+                AND DATE(e.start_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="bankId != null">
+                AND e.bank_id = #{bankId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 获取成绩分数段统计 -->
+    <select id="getScoreSegments" resultType="java.util.HashMap">
+        SELECT 
+            all_segments.segment,
+            COALESCE(actual_data.count, 0) as count,
+            COALESCE(actual_data.percentage, 0) as percentage,
+            COALESCE(actual_data.minScore, 0) as minScore,
+            COALESCE(actual_data.maxScore, 0) as maxScore,
+            (SELECT MAX(total_score) FROM exam_score) as maxExamScore
+        FROM (
+            SELECT '90-100' as segment, 90 as min_score, 100 as max_score
+            UNION ALL SELECT '80-89', 80, 89
+            UNION ALL SELECT '70-79', 70, 79
+            UNION ALL SELECT '60-69', 60, 69
+            UNION ALL SELECT '50-59', 50, 59
+            UNION ALL SELECT '40-49', 40, 49
+            UNION ALL SELECT '30-39', 30, 39
+            UNION ALL SELECT '20-29', 20, 29
+            UNION ALL SELECT '10-19', 10, 19
+            UNION ALL SELECT '0-9', 0, 9
+        ) all_segments
+        LEFT JOIN (
+            SELECT 
+                CASE 
+                    WHEN es.total_score >= 90 THEN '90-100'
+                    WHEN es.total_score >= 80 THEN '80-89'
+                    WHEN es.total_score >= 70 THEN '70-79'
+                    WHEN es.total_score >= 60 THEN '60-69'
+                    WHEN es.total_score >= 50 THEN '50-59'
+                    WHEN es.total_score >= 40 THEN '40-49'
+                    WHEN es.total_score >= 30 THEN '30-39'
+                    WHEN es.total_score >= 20 THEN '20-29'
+                    WHEN es.total_score >= 10 THEN '10-19'
+                    ELSE '0-9'
+                END as segment,
+                COUNT(*) as count,
+                ROUND(COUNT(*) * 100.0 / (
+                    SELECT COUNT(*) 
+                    FROM exam_score es2 
+                    LEFT JOIN user u2 ON es2.student_id = u2.id 
+                    <where>
+                        <if test="examId != null">
+                            AND es2.exam_id = #{examId}
+                        </if>
+                        <if test="clazzId != null">
+                            AND u2.clazz_id = #{clazzId}
+                        </if>
+                    </where>
+                ), 2) as percentage,
+                MIN(es.total_score) as minScore,
+                MAX(es.total_score) as maxScore
+            FROM exam_score es
+            LEFT JOIN user u ON es.student_id = u.id
+            <where>
+                <if test="examId != null">
+                    AND es.exam_id = #{examId}
+                </if>
+                <if test="clazzId != null">
+                    AND u.clazz_id = #{clazzId}
+                </if>
+            </where>
+            GROUP BY 
+                CASE 
+                    WHEN es.total_score >= 90 THEN '90-100'
+                    WHEN es.total_score >= 80 THEN '80-89'
+                    WHEN es.total_score >= 70 THEN '70-79'
+                    WHEN es.total_score >= 60 THEN '60-69'
+                    WHEN es.total_score >= 50 THEN '50-59'
+                    WHEN es.total_score >= 40 THEN '40-49'
+                    WHEN es.total_score >= 30 THEN '30-39'
+                    WHEN es.total_score >= 20 THEN '20-29'
+                    WHEN es.total_score >= 10 THEN '10-19'
+                    ELSE '0-9'
+                END
+        ) actual_data ON all_segments.segment = actual_data.segment
+        ORDER BY 
+            CASE all_segments.segment
+                WHEN '90-100' THEN 1
+                WHEN '80-89' THEN 2
+                WHEN '70-79' THEN 3
+                WHEN '60-69' THEN 4
+                WHEN '50-59' THEN 5
+                WHEN '40-49' THEN 6
+                WHEN '30-39' THEN 7
+                WHEN '20-29' THEN 8
+                WHEN '10-19' THEN 9
+                WHEN '0-9' THEN 10
+            END
+    </select>
+
+</mapper>

@@ -1,0 +1,531 @@
+/* 教育主题样式 - 学生考试系统 */
+
+/* 全局主题色 - 简洁配色方案 */
+:root {
+  --primary-color: #409EFF;
+  --secondary-color: #67C23A;
+  --accent-color: #F56C6C;
+  --warning-color: #E6A23C;
+  --success-color: #67C23A;
+  --text-primary: #303133;
+  --text-secondary: #606266;
+  --text-light: #909399;
+  --bg-light: #f5f7fa;
+  --bg-white: #ffffff;
+  --border-color: #DCDFE6;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #909399;
+}
+
+/* 卡片基础样式 */
+.education-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.education-card .el-card__header {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 16px 20px;
+  border-bottom: none;
+}
+
+.education-card .el-card__body {
+  padding: 20px;
+}
+
+/* 登录页面样式 */
+.education-login {
+  background: linear-gradient(180deg, #409EFF 0%, #79bbff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.education-login .login-form {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  padding: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 100%;
+}
+
+.education-login .title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.education-login .el-form-item {
+  margin-bottom: 20px;
+}
+
+.education-login .el-form-item__label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.education-login .el-input__wrapper {
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-white);
+}
+
+.education-login .el-input__wrapper:hover {
+  border-color: #c0c4cc;
+}
+
+.education-login .el-input__wrapper.is-focus {
+  border-color: var(--primary-color);
+}
+
+.education-login .el-input__inner {
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.education-login .el-button {
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  padding: 10px 20px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.education-login .el-button--primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.education-login .el-button--primary:hover {
+  background: #66b1ff;
+  border-color: #66b1ff;
+}
+
+.education-login .el-button--info {
+  background: #f4f4f5;
+  color: var(--text-secondary);
+  border-color: #d3d4d6;
+  margin-top: 12px;
+}
+
+.education-login .el-button--info:hover {
+  background: #e9e9eb;
+  color: var(--text-primary);
+}
+
+/* 角色选择按钮样式 */
+.education-login .el-radio-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.education-login .el-radio-button {
+  flex: 1;
+}
+
+.education-login .el-radio-button__inner {
+  width: 100%;
+  text-align: center;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.education-login .el-radio-button__inner:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.education-login .el-radio-button.is-active .el-radio-button__inner {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* 主布局样式 */
+.education-layout {
+  background: var(--bg-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-header {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  height: 60px;
+  line-height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.education-header .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.education-sidebar {
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-color);
+  width: 220px !important;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.education-sidebar .el-menu {
+  border-right: none;
+  background: var(--bg-white);
+  height: 100%;
+}
+
+.education-sidebar .el-menu-item,
+.education-sidebar .el-sub-menu__title {
+  border-radius: 0;
+  margin: 0;
+  padding: 0 20px !important;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  height: 50px;
+  line-height: 50px;
+}
+
+.education-sidebar .el-menu-item:hover,
+.education-sidebar .el-sub-menu__title:hover {
+  background: #ecf5ff;
+  color: var(--primary-color);
+}
+
+.education-sidebar .el-menu-item.is-active {
+  background: #ecf5ff;
+  color: var(--primary-color);
+  border-right: 3px solid var(--primary-color);
+}
+
+.education-sidebar .el-sub-menu__title {
+  display: flex;
+  align-items: center;
+}
+
+.education-sidebar .el-sub-menu .el-menu-item {
+  padding-left: 32px !important;
+  border-radius: 25px;
+}
+
+.education-sidebar .el-sub-menu .el-menu-item.is-active {
+  background: var(--secondary-gradient);
+}
+
+/* 主内容区域样式 */
+.el-main {
+  background: var(--bg-light);
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 卡片样式 */
+.education-card {
+  background: var(--bg-white);
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.education-card .el-card__header {
+  background: linear-gradient(135deg, var(--primary-color), #2980b9);
+  color: white;
+  border-radius: 12px 12px 0 0;
+  font-weight: 600;
+}
+
+/* 表格样式 - 现代化设计 */
+.education-table .el-table {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.education-table .el-table__header-wrapper {
+  background: var(--primary-gradient);
+  color: white;
+}
+
+.education-table .el-table__header-wrapper th {
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px;
+  border-bottom: none;
+}
+
+.education-table .el-table__body-wrapper {
+  background: var(--bg-white);
+}
+
+.education-table .el-table__body-wrapper td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.education-table .el-table tr {
+  transition: all var(--transition-fast);
+}
+
+.education-table .el-table tr:hover td {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.education-table .el-table__empty-block {
+  padding: 40px 0;
+}
+
+/* 按钮样式 */
+.el-button {
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  padding: 8px 16px;
+}
+
+.el-button--primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.el-button--primary:hover {
+  background: #66b1ff;
+  border-color: #66b1ff;
+}
+
+.el-button--success {
+  background: var(--success-color);
+  border-color: var(--success-color);
+  color: white;
+}
+
+.el-button--success:hover {
+  background: #85ce61;
+  border-color: #85ce61;
+}
+
+.el-button--warning {
+  background: var(--warning-color);
+  border-color: var(--warning-color);
+  color: white;
+}
+
+.el-button--warning:hover {
+  background: #ebb563;
+  border-color: #ebb563;
+}
+
+.el-button--danger {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.el-button--danger:hover {
+  background: #f78989;
+  border-color: #f78989;
+}
+
+.el-button--info {
+  background: #909399;
+  border-color: #909399;
+  color: white;
+}
+
+.el-button--info:hover {
+  background: #a6a9ad;
+  border-color: #a6a9ad;
+}
+
+/* 表单样式 */
+.el-form-item {
+  margin-bottom: 18px;
+}
+
+.el-form-item__label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.el-input__wrapper {
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.el-input__wrapper:hover {
+  border-color: #c0c4cc;
+}
+
+.el-input__wrapper.is-focus {
+  border-color: var(--primary-color);
+}
+
+/* 考试相关样式 */
+.exam-timer {
+  background: var(--warning-color);
+  color: white;
+  border-radius: var(--border-radius-md);
+  padding: 12px 20px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+}
+
+.exam-question-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-md);
+  border-left: 3px solid var(--primary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.exam-option {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 12px 16px;
+  margin: 8px 0;
+  cursor: pointer;
+  background: var(--bg-white);
+}
+
+.exam-option:hover {
+  border-color: var(--primary-color);
+  background: #ecf5ff;
+}
+
+.exam-option.selected {
+  border-color: var(--success-color);
+  background: #f0f9eb;
+}
+
+/* 考试中的选择题样式 */
+.option-item {
+  border-radius: var(--border-radius-sm);
+}
+
+.option-item.selected {
+  background: #ecf5ff;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .education-sidebar {
+    width: 200px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-login {
+    padding: 16px;
+  }
+  
+  .education-login .login-form {
+    padding: 30px 20px;
+  }
+  
+  .education-login .title {
+    font-size: 24px;
+  }
+  
+  .education-header {
+    padding: 0 16px;
+  }
+  
+  .education-header .title {
+    font-size: 18px;
+  }
+  
+  .education-sidebar {
+    width: 100% !important;
+    height: auto;
+    position: static;
+  }
+  
+  .el-main {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-login .login-form {
+    padding: 20px 16px;
+  }
+  
+  .education-login .title {
+    font-size: 20px;
+  }
+  
+  .el-main {
+    padding: 12px;
+  }
+}
