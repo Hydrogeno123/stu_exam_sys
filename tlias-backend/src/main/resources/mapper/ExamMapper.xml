@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.ExamMapper">
+    
+    <!--分页查询考试列表-->
+    <select id="list" resultType="com.itheima.pojo.Exam">
+        select e.*, u.name as teacher_name, qb.bank_name as bank_name 
+        from exam e left join user u on e.teacher_id = u.id 
+        left join question_bank qb on e.bank_id = qb.id
+        <where>
+            <if test="examName != null and examName != ''">
+                e.exam_name like concat('%',#{examName},'%')
+            </if>
+            <if test="teacherId != null">
+                and e.teacher_id = #{teacherId}
+            </if>
+            <if test="status != null">
+                and e.status = #{status}
+            </if>
+            <if test="startTime != null and endTime != null">
+                and e.start_time between #{startTime} and #{endTime}
+            </if>
+        </where>
+        order by e.update_time desc
+    </select>
+
+    <!--批量删除考试-->
+    <delete id="deleteByIds">
+        delete from exam where id in
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

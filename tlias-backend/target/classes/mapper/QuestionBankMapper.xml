@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.QuestionBankMapper">
+
+    <!--分页查询题库列表-->
+    <select id="list" resultType="com.itheima.pojo.QuestionBank">
+        select qb.*,
+               (select count(*) from question where bank_id = qb.id) as question_count
+        from question_bank qb
+        <where>
+            <if test="bankName != null and bankName != ''">
+                qb.bank_name = #{bankName}
+            </if>
+        </where>
+        order by qb.update_time desc
+    </select>
+
+    <!--批量删除题库-->
+    <delete id="deleteByIds">
+        delete from question_bank where id in
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--根据题库ID查询题目数量-->
+    <select id="getQuestionCount" resultType="java.lang.Integer">
+        select count(*) from question where bank_id = #{bankId}
+    </select>
+
+</mapper>
