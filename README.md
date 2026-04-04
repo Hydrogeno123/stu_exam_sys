@@ -1,12 +1,57 @@
 ## 快速总结
 
-本项目已成功添加了**管理员（Administrator）**角色，系统现支持三种身份：
+本项目已成功添加了**管理员（Administrator）**角色和**AI 智能助手**功能，系统现支持三种身份：
 
 | 角色   | 账号        | 密码   | 功能                 |
 | ------ | ----------- | ------ | -------------------- |
 | 管理员 | root        | root   | 全系统数据管理       |
 | 教师   | zhanglaoshi | 123456 | 班级、考试、成绩管理 |
 | 学生   | zhangsan    | 123456 | 参加考试、查看成绩   |
+
+---
+
+## AI 智能助手功能
+
+本项目集成了基于大语言模型的 AI 智能助手，为不同角色提供定制化的智能服务：
+
+### 🤖 功能特性
+
+- **角色差异化提示词**：管理员、教师、学生登录时自动加载对应角色的预制提示词
+- **快捷问答**：提供常用问题的快捷按钮
+- **对话历史**：保留对话上下文
+- **消息操作**：支持复制、重新生成、清空对话
+
+### 🔧 配置说明
+
+在 `tlias-backend/src/main/resources/application.yml` 中配置：
+
+```yaml
+ai:
+  enabled: true
+  api-key: sk-xxxxx # 替换为你的 API Key
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${ai.api-key}
+      model-name: qwen-plus # 或其他模型名称
+```
+
+### 💬 各角色 AI 助手
+
+| 角色 | AI 助手功能 |
+|------|-------------|
+| **管理员** | 系统管理帮助、班级/学生/题库/考试管理指南 |
+| **教师** | 考试创建指导、成绩分析、导出报表说明 |
+| **学生** | 参加考试教程、成绩查询、错题复习帮助 |
+
+### 📁 相关文件
+
+- **后端**：`tlias-backend/src/main/java/com/itheima/ai/AiAssistant.java`
+- **后端服务**：`tlias-backend/src/main/java/com/itheima/service/impl/AiAssistantServiceImpl.java`
+- **前端组件**：`tilas_front/src/components/AiAssistant.vue`
+- **API 接口**：`tilas_front/src/api/ai/aiAssistant.js`
 
 ---
 
@@ -20,12 +65,24 @@ front_back_list/
 │   └── stu_exam1.sql          # 数据库结构及测试数据，用于phpmyadmin导入
 ├── tlias-backend/             # 后端Java项目
 │   └── src/main/java/com/itheima/
+│       ├── ai/                # ✨ 新增：AI 助手模块
+│       │   └── AiAssistant.java
+│       ├── controller/
+│       │   └── AiAssistantController.java
+│       ├── service/
+│       │   ├── AiAssistantService.java
+│       │   └── impl/
+│       │       └── AiAssistantServiceImpl.java
 │       └── pojo/User.java     # ✨ 已更新：添加管理员角色
 ├── tilas_front/               # 前端Vue项目
 │   └── src/
 │       ├── api/
 │       │   ├── admin.js       # ✨ 新增：管理员API
-│       │   └── teacher.js     # ✨ 新增：教师API
+│       │   ├── teacher.js     # ✨ 新增：教师API
+│       │   └── ai/            # ✨ 新增：AI 助手 API
+│       │       └── aiAssistant.js
+│       ├── components/
+│       │   └── AiAssistant.vue # ✨ 新增：AI 助手组件
 │       ├── router/
 │       │   └── index.js       # ✨ 已更新：添加管理员路由
 │       └── views/
@@ -249,8 +306,19 @@ npm run build
 
 ## 文件修改清单
 
-### ✨ 新增文件（7个）
+### ✨ 新增文件（12个）
 
+**后端 AI 模块**（5个）
+- `tlias-backend/src/main/java/com/itheima/ai/AiAssistant.java`
+- `tlias-backend/src/main/java/com/itheima/controller/AiAssistantController.java`
+- `tlias-backend/src/main/java/com/itheima/service/AiAssistantService.java`
+- `tlias-backend/src/main/java/com/itheima/service/impl/AiAssistantServiceImpl.java`
+
+**前端 AI 模块**（2个）
+- `tilas_front/src/api/ai/aiAssistant.js`
+- `tilas_front/src/components/AiAssistant.vue`
+
+**管理员模块**（5个）
 - `tilas_front/src/api/admin.js`
 - `tilas_front/src/api/teacher.js`
 - `tilas_front/src/views/admin/dashboard/index.vue`
@@ -259,13 +327,15 @@ npm run build
 - `tilas_front/src/views/admin/questions/index.vue`
 - `tilas_front/src/views/admin/exams/index.vue`
 
-### 🔄 修改文件（5个）
+### 🔄 修改文件（7个）
 
 - `database/database0.sql` - 添加管理员初始账户
 - `tlias-backend/src/main/java/com/itheima/pojo/User.java` - 更新角色注释
+- `tlias-backend/src/main/resources/application.yml` - 添加 AI 配置
 - `tilas_front/src/views/login/index.vue` - 添加管理员登录选项
 - `tilas_front/src/router/index.js` - 添加管理员路由
-- `tilas_front/src/views/layout/index.vue` - 添加管理员菜单
+- `tilas_front/src/views/layout/index.vue` - 添加管理员菜单和 AI 助手
+- `pom.xml` - 添加 langchain4j 依赖
 
 ---
 
@@ -297,6 +367,14 @@ npm run build
 2. 尝试访问管理员页面 (如 /admin/users)
 3. ✅ 被重定向到首页
 
+### 场景5：AI 助手功能测试
+
+1. 以任意角色登录
+2. 点击右下角的 "AI助手" 按钮
+3. ✅ 显示对应角色的欢迎语和快捷按钮
+4. 输入问题或点击快捷按钮
+5. ✅ AI 返回相关回答
+
 ---
 
 ## 常见问题
@@ -315,6 +393,15 @@ A: 支持选择题（4个选项）和填空题（文本答案）。
 
 **Q: 如何批量导入用户？**
 A: 当前版本需单个创建，可后期扩展为CSV批量导入功能。
+
+**Q: 如何配置 AI 助手？**
+A: 在 `tlias-backend/src/main/resources/application.yml` 中配置 `ai.api-key`，使用阿里云百炼或其他兼容 OpenAI 格式的 API 服务。
+
+**Q: AI 助手不工作怎么办？**
+A: 检查：1) application.yml 中的 AI 配置是否正确；2) API Key 是否有效；3) 网络是否能访问 API 服务。
+
+**Q: 不同角色的 AI 助手有什么区别？**
+A: 每个角色都有专属的预制提示词，管理员侧重系统管理、教师侧重教学、学生侧重学习指导。
 
 ---
 
@@ -339,12 +426,19 @@ A: 当前版本需单个创建，可后期扩展为CSV批量导入功能。
    - 审计日志
    - 操作历史追踪
 
+5. **AI 助手增强**
+   - 接入考试/成绩数据分析
+   - 支持语音输入
+   - 支持多轮对话记忆
+   - 支持知识库检索
+
 ---
 
 ## 支持与反馈
 
 如有任何问题或建议，请联系开发团队。
 
-**项目版本：** v1.0
+**项目版本：** v1.1
 **支持角色：** 管理员、教师、学生
-**最后更新：** 2025年12月
+**新增功能：** AI 智能助手
+**最后更新：** 2026年4月
