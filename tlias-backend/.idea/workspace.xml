@@ -4,7 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9c32abc-8fce-4713-949c-54c6073804bc" name="更改" comment="" />
+    <list default="true" id="e9c32abc-8fce-4713-949c-54c6073804bc" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../tilas_front/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../tilas_front/src/views/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/TliasWebManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/TliasWebManagementApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ClazzController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ClazzController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamScoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionBankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionBankController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/exception/BusinessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/exception/BusinessException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AnswerRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AnswerRecordMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ClazzMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ClazzMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamPaperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamPaperMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamScoreMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamScoreMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionBankMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionBankMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/StudentAnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/StudentAnswerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/AnswerRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/AnswerRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Clazz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Clazz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Exam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamPaper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamQueryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamQueryParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO$AnswerItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO$AnswerItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/PageResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/PageResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionQueryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionQueryParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/StudentAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/StudentAnswer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/AnswerRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/AnswerRecordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ClazzService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ClazzService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamPaperService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamPaperService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamScoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamScoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionBankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionBankService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/StudentAnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/StudentAnswerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/AnswerRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/AnswerRecordServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ClazzServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ClazzServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamPaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamPaperServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamScoreServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionBankServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionBankServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/StudentAnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/StudentAnswerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/LogTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/TliasWebManagementApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/UUIDTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tlias-web-management-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +82,9 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="PARALLEL_COMPILATION" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -31,41 +104,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.tlias-web-management [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tlias-web-management [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tlias-web-management [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tlias-web-management [test].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.TliasWebManagementApplication.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/tst&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;数据库脚本.database.sql.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.tlias-web-management [clean].executor": "Run",
+    "Maven.tlias-web-management [compile].executor": "Run",
+    "Maven.tlias-web-management [install].executor": "Run",
+    "Maven.tlias-web-management [test].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.TliasWebManagementApplication.executor": "Run",
+    "git-widget-placeholder": "main-v2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Administrator/Downloads/stu_exam_sys-main/tlias-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true",
+    "数据库脚本.database.sql.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;6117b0ed-93e2-4c6c-bc88-fb0641199ffd&quot;
+    "RunConfigurationTargetLRU": [
+      "6117b0ed-93e2-4c6c-bc88-fb0641199ffd"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.TliasWebManagementApplication">
     <configuration name="database.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/database.sql" />
@@ -117,6 +192,7 @@
       <workItem from="1764601789862" duration="277000" />
       <workItem from="1764602446149" duration="1000" />
       <workItem from="1764644808099" duration="11945000" />
+      <workItem from="1775278431767" duration="4981000" />
     </task>
     <servers />
   </component>

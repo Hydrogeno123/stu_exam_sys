@@ -1,5 +1,6 @@
 com\itheima\service\impl\ClazzServiceImpl.class
 com\itheima\controller\QuestionBankController.class
+com\itheima\service\AiAssistantService.class
 com\itheima\pojo\StudentAnswer.class
 com\itheima\pojo\User.class
 com\itheima\service\ExamScoreService.class
@@ -14,10 +15,13 @@ com\itheima\controller\UserController.class
 com\itheima\service\StudentAnswerService.class
 com\itheima\service\ExamPaperService.class
 com\itheima\utils\AliyunOSSProperties.class
+com\itheima\config\AiConfig.class
 com\itheima\pojo\ExamScore.class
 com\itheima\mapper\QuestionMapper.class
 com\itheima\pojo\ExamSubmitDTO.class
 com\itheima\pojo\QuestionQueryParam.class
+com\itheima\ai\AiAssistant.class
+com\itheima\service\impl\AiAssistantServiceImpl.class
 com\itheima\mapper\ExamMapper.class
 com\itheima\mapper\StudentAnswerMapper.class
 com\itheima\mapper\UserMapper.class
@@ -41,6 +45,7 @@ com\itheima\service\impl\QuestionServiceImpl.class
 com\itheima\exception\GlobalExceptionHandler.class
 com\itheima\controller\ExamScoreController.class
 com\itheima\service\impl\ExamScoreServiceImpl.class
+com\itheima\controller\AiAssistantController.class
 com\itheima\exception\BusinessException.class
 com\itheima\service\ExamService.class
 com\itheima\pojo\ExamPaper.class

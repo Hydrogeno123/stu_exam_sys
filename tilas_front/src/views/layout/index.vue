@@ -1,4 +1,5 @@
 <script setup>
+import AiAssistant from '@/components/AiAssistant.vue'
 import {
   Avatar,
   Collection,
@@ -230,6 +231,7 @@ const logout =() =>{
 <template>
   <div class="education-layout">
     <el-container>
+      <AiAssistant />
       <!-- Header 区域 -->
       <el-header class="education-header">
         <span class="title">学生考试系统</span>
