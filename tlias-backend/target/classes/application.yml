@@ -25,7 +25,7 @@ aliyun:
 
 ai:
   enabled: true
-  api-key: sk-6d1d2fdc23894c8983116becd8d22b92
+  api-key:  #你的apikey
 
 langchain4j:
   open-ai:

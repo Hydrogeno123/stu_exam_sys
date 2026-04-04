@@ -4,77 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9c32abc-8fce-4713-949c-54c6073804bc" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../tilas_front/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../tilas_front/src/views/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/TliasWebManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/TliasWebManagementApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ClazzController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ClazzController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/ExamScoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionBankController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionBankController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/exception/BusinessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/exception/BusinessException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/exception/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AnswerRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/AnswerRecordMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ClazzMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ClazzMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamPaperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamPaperMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamScoreMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/ExamScoreMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionBankMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionBankMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/QuestionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/StudentAnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/StudentAnswerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/AnswerRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/AnswerRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Clazz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Clazz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Exam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamPaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamQueryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamQueryParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO$AnswerItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO$AnswerItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/ExamSubmitDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/PageResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/PageResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionBank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionQueryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/QuestionQueryParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/StudentAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/StudentAnswer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/AnswerRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/AnswerRecordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ClazzService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ClazzService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamPaperService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamPaperService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamScoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamScoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/ExamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionBankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionBankService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/StudentAnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/StudentAnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/AnswerRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/AnswerRecordServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ClazzServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ClazzServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamPaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamPaperServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamScoreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/ExamServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionBankServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionBankServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/QuestionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/StudentAnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/StudentAnswerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itheima/utils/AliyunOSSProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/LogTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/TliasWebManagementApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/UUIDTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/itheima/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tlias-web-management-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-    </list>
+    <list default="true" id="e9c32abc-8fce-4713-949c-54c6073804bc" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.TliasWebManagementApplication.executor": "Run",
-    "git-widget-placeholder": "main-v2",
+    "git-widget-placeholder": "new-branch",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Administrator/Downloads/stu_exam_sys-main/tlias-backend",
     "node.js.detected.package.eslint": "true",
@@ -192,7 +122,7 @@
       <workItem from="1764601789862" duration="277000" />
       <workItem from="1764602446149" duration="1000" />
       <workItem from="1764644808099" duration="11945000" />
-      <workItem from="1775278431767" duration="4981000" />
+      <workItem from="1775278431767" duration="5301000" />
     </task>
     <servers />
   </component>
